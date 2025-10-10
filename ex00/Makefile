@@ -1,7 +1,7 @@
 NAME = zombie
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -MMD
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
 
 SRC_DIR = .
 OBJ_DIR = obj
@@ -10,7 +10,7 @@ DEP_DIR = deps
 SRC = $(SRC_DIR)/main.cpp \
         $(SRC_DIR)/Zombie.cpp \
         $(SRC_DIR)/newZombie.cpp \
-        $(SRC_DIR)/randomChumop.cpp
+        $(SRC_DIR)/randomChump.cpp
 
 OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
 DEPS = $(patsubst $(SRC_DIR)/%.cpp,$(DEP_DIR)/%.d,$(SRC))
