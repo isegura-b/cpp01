@@ -37,15 +37,17 @@ void Harl::complain(std::string level)
     
     std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     HarlFunc funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-    
-    if (level == levels[0])
-        (this->*funcs[0])();
-    else if (level == levels[1])
-        (this->*funcs[1])();
-    else if (level == levels[2])
-        (this->*funcs[2])();
-    else if (level == levels[3])
-        (this->*funcs[3])();
-    else
-        std::cout << "Invalid level: " << level << std::endl << "DEBUG, INFO, WARNING, ERROR" << std::endl;
+    int n = sizeof(levels) / sizeof(levels[0]);
+
+    for (int i = 0; i < n; ++i)
+    {
+        if (level == levels[i])
+        {
+            (this->*funcs[i])();
+            return;
+        }
+    }
+
+    std::cout << "Invalid level: " << level << std::endl
+              << "DEBUG, INFO, WARNING, ERROR" << std::endl;
 }
