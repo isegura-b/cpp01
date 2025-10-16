@@ -63,6 +63,6 @@ void Harl::complain(std::string level)
             error();
             break;
         default:
-        std::cout << "Invalid level: " << level << std::endl << "DEBUG, INFO, WARNING, ERROR" << std::endl;
+        std::cout << "[ Probably complaining about insignificant problems ]\n" << "Invalid level: " << level << std::endl << "DEBUG, INFO, WARNING, ERROR" << std::endl;
     }
 }
